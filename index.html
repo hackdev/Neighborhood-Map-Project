@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Explore Chicago Museums</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' rel='stylesheet'>
+    <link rel="stylesheet" href="css/style.css">
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js'></script>
+</head>
+<body>
+    <main class="flexbox">
+        <nav class="nav flexbox-item">
+            <div>
+                <h1>Explore Chicago Museums</h1>
+                <input type="search" data-bind="textInput: query, valueUpdate: 'keyup'" placeholder="  Search the list or select museums below" autofocus autocomplete="off" />
+                <ul class = "menu" data-bind="foreach: search()">
+                    <li data-bind="text: name, click: $parent.listItem"></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="content flexbox-item">
+            <div id="map" class="map"></div>
+        </div>
+    </main>
+    <script src="js/app.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-1GmUSWQb0RdAqwl_urBxn59q8bcMr7k&callback=initMap" onerror="noMap()" async defer></script>
+</body>
+</html>
